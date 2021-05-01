@@ -1,0 +1,11 @@
+{
+  "name": "@mix-lib",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "rxjs": "^7.0.0",
+    "ts-http-client": "^0.0.5",
+    "ts-localstorage": "^1.1.0"
+  }
+}
