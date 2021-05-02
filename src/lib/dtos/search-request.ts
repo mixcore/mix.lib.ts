@@ -5,8 +5,8 @@ export default class SearchFilter {
     public specificulture?:  string;
     public fromDate?:  Date;
     public toDate?:  Date;
-    public status: MixContentStatus;
+    public status?: MixContentStatus;
     public keyword?:  string;
-    public query: object;
-    public direction: PagingRequest;
+    public query?: object;
+    public direction?: PagingRequest;
 }
