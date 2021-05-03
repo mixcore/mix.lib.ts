@@ -1,5 +1,5 @@
 import { AxiosRequestConfig } from 'axios';
-import { API_CONFIGURATION } from '../constants/api-config';
+import { getDefaultAxiosConfiguration } from '../helpers/mix-helper';
 import { Api } from '../infrastructure/axios/api';
 export class MixRestService extends Api {
   constructor(
@@ -9,11 +9,10 @@ export class MixRestService extends Api {
     config?: AxiosRequestConfig
   ) {
     // NEVER FORGET THE SUPER
-    config ??= API_CONFIGURATION;
+    config = config || getDefaultAxiosConfiguration();
+    config.baseURL = `${config.baseURL}/${modelName}/${viewName}`;
     if (specificulture) {
-      config.url = `${specificulture}/${modelName}/${viewName}`;
-    } else {
-      config.url = `${modelName}/${viewName}`;
+      config.baseURL = `${config.baseURL}/${specificulture}/${modelName}/${viewName}`;
     }
     super(config);
   }

@@ -10,7 +10,6 @@ import { MixAxios } from './mix-axios';
 
 export class Api extends MixAxios {
   private token: string;
-
   /**
    * Creates an instance of api.
    * @param {import("axios").AxiosRequestConfig} conf

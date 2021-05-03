@@ -1,17 +1,18 @@
 {
-  "name": "@nhathoang989/mixlib",
-  "version": "1.0.2",
+  "name": "mix-lib",
+  "version": "1.0.0",
   "description": "mix library",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
-  "repository": "https://github.com/YOUR_GITHUB_USER_NAME/mixlib",
+  "repository": "https://github.com/mixcore/mix.lib.ts",
   "license": "MIT",
   "keywords": [],
   "scripts": {
     "build": "run-p build:*",
     "build:main": "tsc -p tsconfig.json",
     "build:module": "tsc -p tsconfig.module.json",
+    "build:lib": "tsc -p tsconfig.lib.json",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
     "fix:lint": "eslint src --ext .ts --fix",
@@ -43,7 +44,8 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "qs": "^6.10.1"
+    "qs": "^6.10.1",
+    "ts-localstorage": "^1.1.0"
   },
   "devDependencies": {
     "@ava/typescript": "^1.1.1",
@@ -68,7 +70,6 @@
     "prettier": "^2.1.1",
     "rxjs": "^7.0.0",
     "standard-version": "^9.0.0",
-    "ts-localstorage": "^1.1.0",
     "ts-node": "^9.0.0",
     "typedoc": "^0.19.0",
     "typescript": "^4.0.2"

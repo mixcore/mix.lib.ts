@@ -1,13 +1,13 @@
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosInstance } from 'axios';
 import { LocalStorage } from 'ts-localstorage';
-import { API_CONFIGURATION } from '../../constants/api-config';
 import { AUTHORIZATION } from '../../constants/local-storage-keys';
+import { getDefaultAxiosConfiguration } from '../../helpers/mix-helper';
 
 export class MixAxios {
   protected readonly instance: AxiosInstance;
 
   public constructor(conf?: AxiosRequestConfig) {
-    let config = conf || API_CONFIGURATION;
+    let config = conf || getDefaultAxiosConfiguration();
     this.instance = axios.create(config);
     this._initializeResponseInterceptor();
   }
@@ -25,7 +25,8 @@ export class MixAxios {
 
   private _handleRequest = (config: AxiosRequestConfig) => {
     if (this.instance.defaults.withCredentials) {
-      config.headers.common[AUTHORIZATION] = this.getCredentialToken();
+      let token = this.getCredentialToken();
+      if (token) config.headers.common[AUTHORIZATION] = token;
     }
     return config;
   };
@@ -35,6 +36,7 @@ export class MixAxios {
   protected _handleError = (error: any) => Promise.reject(error);
 
   protected getCredentialToken(): string {
-    return `Bearer ${LocalStorage.getItem(AUTHORIZATION)}`;
+    let token = LocalStorage.getItem(AUTHORIZATION);
+    return token ? `Bearer ${LocalStorage.getItem(AUTHORIZATION)}` : '';
   }
 }
