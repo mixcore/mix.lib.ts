@@ -2,10 +2,10 @@ import { AxiosRequestConfig, AxiosResponse } from 'Axios';
 import { Axios } from 'axios-observable';
 import { Observable } from 'rxjs';
 import { LocalStorage } from 'ts-localstorage';
-import { API_CONFIGURATION } from '../constants/api-config';
-import { AUTHORIZATION } from '../constants/local-storage-keys';
+import { API_CONFIGURATION } from '../../constants/api-config';
+import { AUTHORIZATION } from '../../constants/local-storage-keys';
 
-export class AxiosHttpClient {
+export class MixAxios {
   protected readonly instance: Axios;
 
   public constructor(url: string, withCredentials?: boolean) {
@@ -21,6 +21,17 @@ export class AxiosHttpClient {
       this._handleResponse,
       this._handleError
     );
+    this.instance.interceptors.request.use(
+      this._handleRequest,
+      this._handleError
+    );
+  };
+
+  private _handleRequest = (config: AxiosRequestConfig) => {
+    if (this.instance.defaults.withCredentials) {
+      config.headers.common[AUTHORIZATION] = this.getCredentialToken();
+    }
+    return config;
   };
 
   private _handleResponse = ({ data }: AxiosResponse) => data;
