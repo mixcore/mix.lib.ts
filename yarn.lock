@@ -947,11 +947,6 @@ ava@^3.12.1:
     write-file-atomic "^3.0.3"
     yargs "^16.2.0"
 
-axios-observable@^1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/axios-observable/-/axios-observable-1.1.6.tgz#08cec29faae1a9e1a766fb5e2e9d07eae406e1d4"
-  integrity sha512-demLOWURdp9YDFV9zXY6m8TXuIpY0tHUKKt4nsMJ48tQy+5pjZc22PjgxZL7nGojsICzSKZDly6EI12VUTssdQ==
-
 axios@^0.21.1:
   version "0.21.1"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"

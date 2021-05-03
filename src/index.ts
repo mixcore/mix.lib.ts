@@ -1,3 +1,3 @@
-export * from './lib/number';
-export * from './lib/infrastructure/services/axios-api-service';
-export * from './lib/infrastructure/services/mix-api-service';
+export * from './lib/models/auth.models';
+export * from './lib/services/mix-authentication-service';
+export * from './lib/services/mix-rest-service';

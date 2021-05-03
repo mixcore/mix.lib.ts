@@ -43,7 +43,6 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "axios-observable": "^1.1.6",
     "qs": "^6.10.1"
   },
   "devDependencies": {
