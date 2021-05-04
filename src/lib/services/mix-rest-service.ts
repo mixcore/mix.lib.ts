@@ -3,6 +3,7 @@ import { getDefaultAxiosConfiguration } from '../helpers/mix-helper';
 import { Api } from '../infrastructure/axios/api';
 export class MixRestService extends Api {
   constructor(
+    appUrl: string,
     modelName: string,
     viewName: string,
     specificulture?: string,
@@ -10,9 +11,9 @@ export class MixRestService extends Api {
   ) {
     // NEVER FORGET THE SUPER
     config = config || getDefaultAxiosConfiguration();
-    config.baseURL = `${config.baseURL}/${modelName}/${viewName}`;
+    config.baseURL = `${appUrl}/${modelName}/${viewName}`;
     if (specificulture) {
-      config.baseURL = `${config.baseURL}/${specificulture}/${modelName}/${viewName}`;
+      config.baseURL = `${appUrl}/${specificulture}/${modelName}/${viewName}`;
     }
     super(config);
   }
