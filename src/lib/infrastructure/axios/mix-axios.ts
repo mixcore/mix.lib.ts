@@ -1,6 +1,5 @@
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosInstance } from 'axios';
-import { LocalStorage } from 'ts-localstorage';
-import { AUTHORIZATION } from '../../constants/local-storage-keys';
+import { CONF_AUTHORIZATION } from '../../constants/local-storage-keys';
 import { getDefaultAxiosConfiguration } from '../../helpers/mix-helper';
 
 export class MixAxios {
@@ -26,7 +25,7 @@ export class MixAxios {
   private _handleRequest = (config: AxiosRequestConfig) => {
     if (this.instance.defaults.withCredentials) {
       let token = this.getCredentialToken();
-      if (token) config.headers.common[AUTHORIZATION] = token;
+      if (token) config.headers.common[CONF_AUTHORIZATION] = token;
     }
     return config;
   };
@@ -36,7 +35,7 @@ export class MixAxios {
   protected _handleError = (error: any) => Promise.reject(error);
 
   protected getCredentialToken(): string {
-    let token = LocalStorage.getItem(AUTHORIZATION);
-    return token ? `Bearer ${LocalStorage.getItem(AUTHORIZATION)}` : '';
+    let token = localStorage.getItem(CONF_AUTHORIZATION);
+    return token ? `Bearer ${localStorage.getItem(CONF_AUTHORIZATION)}` : '';
   }
 }
