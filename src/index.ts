@@ -6,3 +6,4 @@ export * from './lib/services/base/mix-rest-portal-service';
 export * from './lib/helpers/mix-helper';
 export * from './lib/enums/mix-enums';
 export * from './lib/services/portal/mix-post-service';
+export { cryptoService, CryptoService } from './lib/services/crypto-service';
