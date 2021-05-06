@@ -7,8 +7,8 @@ export class MixRestService<T> extends Api {
   public specificulture?: string | null;
   public get modelUrl(): string {
     return this.specificulture
-      ? `/api/v1/rest/${this.specificulture}/${this.modelName}/${this.viewName}`
-      : `/api/v1/rest/${this.modelName}/${this.viewName}`;
+      ? `/rest/${this.specificulture}/${this.modelName}/${this.viewName}`
+      : `/rest/${this.modelName}/${this.viewName}`;
   }
   constructor(
     appUrl: string,
@@ -67,10 +67,6 @@ export class MixRestService<T> extends Api {
 
   public clearCache(id?: any): Promise<T> {
     return this.get(`${this.modelUrl}/remove-cache/${id}`);
-  }
-
-  public setAppUrl(appUrl: string) {
-    this.instance.defaults.baseURL = appUrl;
   }
 
   public setLanguage(specificulture: string) {

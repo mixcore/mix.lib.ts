@@ -7,7 +7,7 @@ import Qs from 'qs';
  */
 export function getDefaultAxiosConfiguration(): AxiosRequestConfig {
   return {
-    withCredentials: true,
+    withCredentials: false,
     timeout: 30000,
     baseURL: '',
     headers: {

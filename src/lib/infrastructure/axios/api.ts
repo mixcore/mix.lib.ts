@@ -17,6 +17,7 @@ export class Api extends MixAxios {
   public constructor(conf?: AxiosRequestConfig) {
     super(conf);
     this.token = '';
+    this.setAppUrl = this.setAppUrl.bind(this);
     this.getToken = this.getToken.bind(this);
     this.setToken = this.setToken.bind(this);
     this.getUri = this.instance.getUri.bind(this);
@@ -30,6 +31,10 @@ export class Api extends MixAxios {
     this.patch = this.instance.patch.bind(this);
     this.success = this.success.bind(this);
     this.error = this.error.bind(this);
+  }
+
+  public setAppUrl(appUrl: string) {
+    this.instance.defaults.baseURL = appUrl;
   }
 
   /**
@@ -236,3 +241,5 @@ export class Api extends MixAxios {
     throw error;
   }
 }
+
+export const apiService = new Api();

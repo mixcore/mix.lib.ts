@@ -1,4 +1,4 @@
-import { AES, enc } from 'crypto-js';
+import * as CryptoJS from 'crypto-js';
 export class CryptoService {
   public size: number = 256;
   public encryptAES(message: string, iCompleteEncodedKey: string) {
@@ -9,20 +9,17 @@ export class CryptoService {
       mode: CryptoJS.mode.CBC,
       padding: CryptoJS.pad.Pkcs7,
     };
-    return AES.encrypt(message, aesKeys.key, options).toString();
+    return CryptoJS.AES.encrypt(message, aesKeys.key, options).toString();
   }
   public decryptAES(ciphertext: string, iCompleteEncodedKey: string) {
     let aesKeys = new AESKey(iCompleteEncodedKey);
-    var cipherParams = CryptoJS.lib.CipherParams.create({
-      ciphertext: CryptoJS.enc.Base64.parse(ciphertext),
-    });
     var options = {
       iv: aesKeys.iv,
       keySize: this.size / 8,
       mode: CryptoJS.mode.CBC,
       padding: CryptoJS.pad.Pkcs7,
     };
-    var decrypted = AES.decrypt(cipherParams, aesKeys.key, options);
+    var decrypted = CryptoJS.AES.decrypt(ciphertext, aesKeys.key, options);
     return decrypted.toString(CryptoJS.enc.Utf8);
   }
 }
@@ -34,11 +31,11 @@ export class AESKey {
    *
    */
   constructor(encryptedKeys: string) {
-    var keyStrings = enc.Utf8.stringify(enc.Base64.parse(encryptedKeys)).split(
-      ','
-    );
-    this.iv = enc.Base64.parse(keyStrings[0]);
-    this.key = enc.Base64.parse(keyStrings[1]).toString();
+    var keyStrings = CryptoJS.enc.Utf8.stringify(
+      CryptoJS.enc.Base64.parse(encryptedKeys)
+    ).split(',');
+    this.iv = CryptoJS.enc.Base64.parse(keyStrings[0]);
+    this.key = CryptoJS.enc.Base64.parse(keyStrings[1]).toString();
   }
 }
 
