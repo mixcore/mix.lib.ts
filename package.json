@@ -110,5 +110,11 @@
     "exclude": [
       "**/*.spec.js"
     ]
+  },
+   "ngPackage": {
+    "dest": "lib",
+    "lib": {
+      "entryFile": "src/public_api.ts"
+    }
   }
 }

@@ -39,9 +39,10 @@
 
     "lib": ["ES6", "DOM"],
     "types": [],
-    "typeRoots": ["node_modules/@types", "src/types"]
+    "typeRoots": ["node_modules/@types", "src/types"],
+    "watch": true
   },
   "include": ["src/**/*.ts", "crypto-js"],
   "exclude": ["node_modules/**"],
-  "compileOnSave": false
+  "compileOnSave": true
 }

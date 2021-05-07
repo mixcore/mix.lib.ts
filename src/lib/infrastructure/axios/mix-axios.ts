@@ -10,7 +10,7 @@ export class MixAxios {
     if (!config.baseURL) {
       config.baseURL =
         localStorage.getItem(LocalStorageKeys.CONF_APP_URL) ||
-        window.location.origin;
+        `${window.location.origin}/api/v1`;
     }
     this.instance = axios.create(config);
     this._initializeResponseInterceptor();
