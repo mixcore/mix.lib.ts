@@ -43,5 +43,5 @@
   },
   "include": ["src/**/*.ts", "crypto-js"],
   "exclude": ["node_modules/**"],
-  "compileOnSave": false
+  "compileOnSave": true
 }

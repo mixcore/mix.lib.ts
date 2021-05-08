@@ -18,7 +18,7 @@ export class MixSettingService {
       LocalStorageKeys.CONF_LOCAL_SETTINGS
     ) as Object;
     this.globalSettings = JSON.parse(
-      localStorage.getItem(LocalStorageKeys.CONF_GLOBAL_SETTINGS) || ''
+      localStorage.getItem(LocalStorageKeys.CONF_GLOBAL_SETTINGS) || '{}'
     ) as GlobalSetting;
     this.translator = localStorage.getItem(
       LocalStorageKeys.CONF_TRANSLATOR
