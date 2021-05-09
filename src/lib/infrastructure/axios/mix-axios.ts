@@ -8,9 +8,11 @@ export class MixAxios {
   public constructor(conf?: AxiosRequestConfig) {
     let config = conf || getDefaultAxiosConfiguration();
     if (!config.baseURL) {
-      config.baseURL =
-        localStorage.getItem(LocalStorageKeys.CONF_APP_URL) ||
-        window.location.origin;
+        if(typeof window !== 'undefined'){ // Check if local browser
+            config.baseURL =
+                localStorage.getItem(LocalStorageKeys.CONF_APP_URL) ||
+                window.location.origin;
+        }
     }
     this.instance = axios.create(config);
     this._initializeResponseInterceptor();
