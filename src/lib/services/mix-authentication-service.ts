@@ -1,4 +1,5 @@
 import { AxiosRequestConfig, AxiosResponse } from 'axios';
+
 import { Api } from '../infrastructure/axios/api';
 import { LoginModel, Token } from '../models/auth.models';
 export class MixAuthenticationService extends Api {
