@@ -13,7 +13,6 @@
     "build:main": "tsc -p tsconfig.json",
     "build:module": "tsc -p tsconfig.module.json",
     "build:lib": "tsc -p tsconfig.lib.json",
-    "build:lib-svelte": "tsc -p tsconfig.svelte.json",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
     "fix:lint": "eslint src --ext .ts --fix",
@@ -45,6 +44,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "crypto-js": "^4.0.0",
     "qs": "^6.10.1"
   },
   "devDependencies": {
@@ -110,7 +110,7 @@
       "**/*.spec.js"
     ]
   },
-   "ngPackage": {
+  "ngPackage": {
     "dest": "lib",
     "lib": {
       "entryFile": "src/public_api.ts"

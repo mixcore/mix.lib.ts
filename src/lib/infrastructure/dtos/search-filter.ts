@@ -6,8 +6,8 @@ export class SearchFilter {
   public toDate?: Date;
   public status?: MixContentStatus;
   public keyword?: string;
-  public query?: object;
-  public pageIndex: number = 0;
+  public query?: never;
+  public pageIndex = 0;
   public page?: number = 1;
   public pageSize?: number;
   public orderBy?: string;

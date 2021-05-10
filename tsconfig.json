@@ -5,7 +5,7 @@
     "outDir": "build/main",
     "rootDir": "src",
     "moduleResolution": "node",
-    "module": "commonjs",
+    "module": "ESNext",
     "declaration": true,
     "inlineSourceMap": true,
     "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
@@ -40,7 +40,10 @@
     "lib": ["ES6", "DOM"],
     "types": [],
     "typeRoots": ["node_modules/@types", "src/types"],
-    "watch": true
+    "watch": true,
+    "paths": {
+      "crypto": ["./node_modules/crypto-js"]
+    }
   },
   "include": ["src/**/*.ts", "crypto-js"],
   "exclude": ["node_modules/**"],
