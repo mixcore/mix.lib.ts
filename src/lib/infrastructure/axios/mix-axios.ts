@@ -1,4 +1,5 @@
-import axios, { AxiosRequestConfig, AxiosResponse, AxiosInstance } from 'axios';
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+
 import { LocalStorageKeys } from '../../constants/local-storage-keys';
 import { getDefaultAxiosConfiguration } from '../../helpers/mix-helper';
 
@@ -6,11 +7,14 @@ export class MixAxios {
   protected readonly instance: AxiosInstance;
 
   public constructor(conf?: AxiosRequestConfig) {
-    let config = conf || getDefaultAxiosConfiguration();
+    const config = conf || getDefaultAxiosConfiguration();
     if (!config.baseURL) {
-      config.baseURL =
-        localStorage.getItem(LocalStorageKeys.CONF_APP_URL) ||
-        `${window.location.origin}/api/v1`;
+      if (typeof window !== 'undefined') {
+        // Check if local browser
+        config.baseURL =
+          localStorage.getItem(LocalStorageKeys.CONF_APP_URL) ||
+          window.location.origin;
+      }
     }
     this.instance = axios.create(config);
     this._initializeResponseInterceptor();
@@ -29,7 +33,7 @@ export class MixAxios {
 
   private _handleRequest = (config: AxiosRequestConfig) => {
     if (this.instance.defaults.withCredentials) {
-      let token = this.getCredentialToken();
+      const token = this.getCredentialToken();
       if (token)
         config.headers.common[LocalStorageKeys.CONF_AUTHORIZATION] = token;
     }
@@ -38,10 +42,10 @@ export class MixAxios {
 
   private _handleResponse = ({ data }: AxiosResponse) => data;
 
-  protected _handleError = (error: any) => Promise.reject(error);
+  protected _handleError = (error: unknown) => Promise.reject(error);
 
   protected getCredentialToken(): string {
-    let token = localStorage.getItem(LocalStorageKeys.CONF_AUTHORIZATION);
+    const token = localStorage.getItem(LocalStorageKeys.CONF_AUTHORIZATION);
     return token
       ? `Bearer ${localStorage.getItem(LocalStorageKeys.CONF_AUTHORIZATION)}`
       : '';
