@@ -1,5 +1,5 @@
 export class LocalStorageKeys {
-  public static CONF_GLOBAL_SETTINGS: string = 'Global_Settings';
+  public static CONF_GLOBAL_SETTINGS = 'Global_Settings';
   public static CONF_LOCAL_SETTINGS = 'Local_Settings';
   public static CONF_TRANSLATOR = 'translator';
   public static CONF_AUTHORIZATION = 'Authorization';

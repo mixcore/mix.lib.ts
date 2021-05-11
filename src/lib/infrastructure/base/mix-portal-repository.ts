@@ -1,9 +1,9 @@
 import { LocalStorageKeys } from '../../constants/local-storage-keys';
-import { MixModelType } from '../../enums/mix-enums';
+import { MixModelType, MixViewModelTypes } from '../../enums/mix-enums';
 import { getDefaultAxiosConfiguration } from '../../helpers/mix-helper';
 
-import { MixRestRepository } from './mix-rest-repository';
-export class MixRestPortalRepository<T> extends MixRestRepository<T> {
+import { MixRepository } from './mix-repository';
+export class MixPortalRepository<T> extends MixRepository<T> {
   constructor(modelName: MixModelType) {
     const appUrl =
       localStorage.getItem(LocalStorageKeys.CONF_APP_URL) ||
@@ -11,7 +11,7 @@ export class MixRestPortalRepository<T> extends MixRestRepository<T> {
     const specificulture = localStorage.getItem(
       LocalStorageKeys.CONF_CURRENT_CULTURE
     );
-    const viewName = 'mvc';
+    const viewName = MixViewModelTypes.Mvc;
     const conf = getDefaultAxiosConfiguration();
     conf.baseURL = appUrl;
     conf.withCredentials = false;

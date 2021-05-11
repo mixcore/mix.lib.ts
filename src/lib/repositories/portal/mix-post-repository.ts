@@ -1,8 +1,8 @@
 import { MixModelType } from '../../enums/mix-enums';
-import { MixRestPortalRepository } from '../../infrastructure/base/mix-rest-portal-repository';
+import { MixPortalRepository } from '../../infrastructure/base/mix-portal-repository';
 import { MixPostPortalModel } from '../../models/portal/mix-post-portal-model';
 
-export class PostRepository extends MixRestPortalRepository<MixPostPortalModel> {
+export class PostRepository extends MixPortalRepository<MixPostPortalModel> {
   constructor() {
     super(MixModelType.Post);
   }

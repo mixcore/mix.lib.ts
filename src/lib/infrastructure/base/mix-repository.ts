@@ -3,7 +3,7 @@ import { AxiosRequestConfig } from 'axios';
 import { SearchFilter } from '../../dtos/search-filter';
 import { MixModelType } from '../../enums/mix-enums';
 import { MixApiService } from '../axios/api';
-export class MixRestRepository<T> {
+export class MixRepository<T> {
   public modelType: MixModelType;
   public viewName: string;
   public specificulture?: string | null;

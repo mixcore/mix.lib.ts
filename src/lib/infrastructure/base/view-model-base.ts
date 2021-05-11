@@ -1,15 +1,15 @@
 import { MixModelType } from '../../enums/mix-enums';
 
-import { MixRestPortalRepository } from './mix-rest-portal-repository';
+import { MixPortalRepository } from './mix-portal-repository';
 
 export abstract class ViewModelBase<T> {
   public id!: string | number;
-  public repository: MixRestPortalRepository<T>;
+  public repository: MixPortalRepository<T>;
   /**
    *
    */
   constructor(modelType: MixModelType, model?: T) {
-    this.repository = new MixRestPortalRepository(modelType);
+    this.repository = new MixPortalRepository(modelType);
     if (model) {
       this.parseView(model);
     }

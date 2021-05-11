@@ -36,7 +36,7 @@ export class MixSettingService {
         this.globalSettings = resp.globalSettings || new GlobalSetting();
         this.localizeSettings = resp.localizeSettings;
         this.translator = resp.translator;
-        if (typeof window !== 'undefined') {
+        if (typeof window !== undefined) {
           // Check if local browser
           localStorage.setItem(
             LocalStorageKeys.CONF_GLOBAL_SETTINGS,
@@ -66,7 +66,7 @@ export class MixSettingService {
   private isRenewSettings(): boolean {
     const now = new Date();
     let lastSync;
-    if (typeof window !== 'undefined') {
+    if (typeof window !== undefined) {
       // Check if local browser
       lastSync = localStorage.getItem(
         LocalStorageKeys.CONF_LAST_SYNC_CONFIGURATION
