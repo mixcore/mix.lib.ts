@@ -1,4 +1,4 @@
-import { DisplayDirection, MixContentStatus } from '../../enums/mix-enums';
+import { DisplayDirection, MixContentStatus } from '../enums/mix-enums';
 
 export class SearchFilter {
   public specificulture?: string;

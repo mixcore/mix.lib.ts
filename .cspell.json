@@ -6,6 +6,7 @@
         "bitauth",
         "bitjson",
         "cimg",
+        "ciphertext",
         "circleci",
         "codecov",
         "commitlint",

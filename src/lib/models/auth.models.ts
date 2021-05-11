@@ -2,7 +2,7 @@ export class LoginModel {
   public email: string | undefined;
   public username: string | undefined;
   public password: string | undefined;
-  public rememberMe: boolean = false;
+  public rememberMe = false;
   public returnUrl: string | undefined;
 }
 
@@ -19,6 +19,6 @@ export class Token {
 }
 
 export class UserInfo {
-  public additionalData: any;
+  public additionalData: never | undefined;
   public roles: string[] | undefined;
 }

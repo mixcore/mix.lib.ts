@@ -4,7 +4,7 @@ import { LocalStorageKeys } from '../../constants/local-storage-keys';
 import { getDefaultAxiosConfiguration } from '../../helpers/mix-helper';
 
 export class MixAxios {
-  protected readonly instance: AxiosInstance;
+  public readonly instance: AxiosInstance;
 
   public constructor(conf?: AxiosRequestConfig) {
     const config = conf || getDefaultAxiosConfiguration();

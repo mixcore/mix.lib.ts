@@ -1,4 +1,5 @@
-import { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
+import { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
+
 import { MixAxios } from './mix-axios';
 
 /**
@@ -8,7 +9,7 @@ import { MixAxios } from './mix-axios';
  * @link [AxiosRequestConfig](https://github.com/axios/axios#request-config)
  */
 
-export class Api extends MixAxios {
+export class MixApiService extends MixAxios {
   private token: string;
   /**
    * Creates an instance of api.
@@ -242,4 +243,4 @@ export class Api extends MixAxios {
   }
 }
 
-export const apiService = new Api();
+export const apiService = new MixApiService();
