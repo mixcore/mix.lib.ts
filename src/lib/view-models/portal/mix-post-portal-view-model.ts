@@ -3,6 +3,13 @@ import { ViewModelBase } from '../../infrastructure/base/view-model-base';
 import { MixPostPortalModel } from '../../models/portal/mix-post-portal-model';
 
 export class MixPostPortalViewModel extends ViewModelBase<MixPostPortalModel> {
+  public title?: string;
+  public createdDateTime?: Date;
+
+  constructor() {
+    super(MixModelType.Post);
+  }
+
   parseModel(): MixPostPortalModel {
     const post: MixPostPortalModel = {
       id: this.id as number,
@@ -15,11 +22,5 @@ export class MixPostPortalViewModel extends ViewModelBase<MixPostPortalModel> {
     this.id = model.id;
     this.title = model.title;
     this.createdDateTime = model.createdDateTime;
-  }
-  public title?: string;
-  public createdDateTime?: Date;
-
-  constructor() {
-    super(MixModelType.Post);
   }
 }
