@@ -3,7 +3,8 @@
   "compilerOptions": {
     "target": "esnext",
     "outDir": "./dist/mix-lib",
-    "module": "esnext"
+    "module": "esnext",
+    "watch": false
   },
   "exclude": ["node_modules/**"]
 }
