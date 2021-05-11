@@ -6,8 +6,8 @@ export class MixPostPortalViewModel extends ViewModelBase<MixPostPortalModel> {
   public title?: string;
   public createdDateTime?: Date;
 
-  constructor() {
-    super(MixModelType.Post);
+  constructor(model: MixPostPortalModel) {
+    super(MixModelType.Post, model);
   }
 
   parseModel(): MixPostPortalModel {

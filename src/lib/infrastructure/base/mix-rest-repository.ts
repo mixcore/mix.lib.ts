@@ -47,7 +47,7 @@ export class MixRestRepository<T> {
   }
 
   public updateModel(id: string | number, model: T): Promise<T> {
-    return this.service.put(`${this.modelUrl}${id}`, model);
+    return this.service.put(`${this.modelUrl}/${id}`, model);
   }
 
   public updateFields(id: string | number, fields: never): Promise<T> {
@@ -65,7 +65,7 @@ export class MixRestRepository<T> {
 
   public exportListModel(queries?: never): Promise<T> {
     this.service.instance.defaults.params = queries;
-    return this.service.get('${this.modelUrl}/export');
+    return this.service.get(`${this.modelUrl}/export`);
   }
 
   public clearCache(id?: string | number): Promise<T> {

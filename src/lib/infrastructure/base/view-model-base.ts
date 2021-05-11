@@ -8,8 +8,11 @@ export abstract class ViewModelBase<T> {
   /**
    *
    */
-  constructor(modelType: MixModelType) {
+  constructor(modelType: MixModelType, model?: T) {
     this.repository = new MixRestPortalRepository(modelType);
+    if (model) {
+      this.parseView(model);
+    }
   }
 
   public create(): Promise<T> {
