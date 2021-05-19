@@ -1,7 +1,7 @@
 import { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 import { MixApiService } from '../infrastructure/axios/api';
-import { LoginModel, Token } from '../models/auth.models';
+import { LoginModel, Token } from '../models/shared/auth.models';
 export class MixAuthenticationService extends MixApiService {
   public constructor(config?: AxiosRequestConfig) {
     super(config);

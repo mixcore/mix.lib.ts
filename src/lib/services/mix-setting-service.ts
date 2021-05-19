@@ -1,6 +1,9 @@
 import { LocalStorageKeys } from '../constants/local-storage-keys';
 import { apiService } from '../infrastructure/axios/api';
-import { AllSettingsResponse, GlobalSetting } from '../models/setting.models';
+import {
+  AllSettingsResponse,
+  GlobalSetting,
+} from '../models/shared/setting.models';
 
 export class MixSettingService {
   public cachedInMinutes = 20;

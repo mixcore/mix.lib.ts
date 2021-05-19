@@ -4,7 +4,7 @@ import { MixPostPortalModel } from '../../models/portal/mix-post-portal-model';
 
 export class MixPostPortalViewModel extends ViewModelBase<MixPostPortalModel> {
   public title?: string;
-  public createdDateTime?: Date;
+  public createdDateTime!: Date;
 
   constructor(model?: MixPostPortalModel) {
     super(MixModelType.Post, model);

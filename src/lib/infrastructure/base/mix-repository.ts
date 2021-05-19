@@ -3,6 +3,7 @@ import { AxiosRequestConfig } from 'axios';
 import { SearchFilter } from '../../dtos/search-filter';
 import { MixModelType } from '../../enums/mix-enums';
 import { MixApiService } from '../axios/api';
+import { PaginationModel } from '../models/pagination-model';
 export class MixRepository<T> {
   public modelType: MixModelType;
   public viewName: string;
@@ -37,7 +38,7 @@ export class MixRepository<T> {
     return this.service.get(`default`);
   }
 
-  public getListModel(params?: SearchFilter): Promise<T> {
+  public getListModel(params?: SearchFilter): Promise<PaginationModel<T>> {
     this.service.instance.defaults.params = params;
     return this.service.get(this.modelUrl);
   }
@@ -46,7 +47,7 @@ export class MixRepository<T> {
     return this.service.post(this.modelUrl, model);
   }
 
-  public updateModel(id: string | number, model: T): Promise<T> {
+  public updateModel(id: string | number | undefined, model: T): Promise<T> {
     return this.service.put(`${this.modelUrl}/${id}`, model);
   }
 
