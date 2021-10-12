@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig",
+  "compilerOptions": {
+    "target": "esnext",
+    "outDir": "./dist/mix-lib",
+    "module": "esnext",
+    "watch": false
+  },
+  "exclude": ["node_modules/**"]
+}
