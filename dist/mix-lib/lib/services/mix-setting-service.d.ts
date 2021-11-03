@@ -1,4 +1,4 @@
-import { GlobalSetting } from '../models/setting.models';
+import { GlobalSetting } from '../models/shared/setting.models';
 export declare class MixSettingService {
     cachedInMinutes: number;
     globalSettings: GlobalSetting;

@@ -1,4 +1,4 @@
-import * as CryptoJS from 'crypto-js';
+import * as CryptoJS from 'crypto-ts';
 export class CryptoService {
   public size = 256;
   public encryptAES(message: string, iCompleteEncodedKey: string) {
@@ -7,7 +7,7 @@ export class CryptoService {
       iv: aesKeys.iv,
       keySize: this.size / 8,
       mode: CryptoJS.mode.CBC,
-      padding: CryptoJS.pad.Pkcs7,
+      padding: CryptoJS.pad.PKCS7,
     };
     return CryptoJS.AES.encrypt(message, aesKeys.key, options).toString();
   }
@@ -17,7 +17,7 @@ export class CryptoService {
       iv: aesKeys.iv,
       keySize: this.size / 8,
       mode: CryptoJS.mode.CBC,
-      padding: CryptoJS.pad.Pkcs7,
+      padding: CryptoJS.pad.PKCS7,
     };
     const decrypted = CryptoJS.AES.decrypt(ciphertext, aesKeys.key, options);
     return decrypted.toString(CryptoJS.enc.Utf8);
@@ -33,10 +33,10 @@ export class AESKey {
    */
   constructor(encryptedKeys: string) {
     const keyStrings = CryptoJS.enc.Utf8.stringify(
-      CryptoJS.enc.Base64.parse(encryptedKeys)
+      CryptoJS.enc.Hex.parse(encryptedKeys)
     ).split(',');
-    this.iv = CryptoJS.enc.Base64.parse(keyStrings[0]);
-    this.key = CryptoJS.enc.Base64.parse(keyStrings[1]).toString();
+    this.iv = CryptoJS.enc.Hex.parse(keyStrings[0]);
+    this.key = CryptoJS.enc.Hex.parse(keyStrings[1]).toString();
   }
 }
 

@@ -1,5 +1,4 @@
 import { AxiosRequestConfig } from 'axios';
-import Qs from 'qs';
 
 /**
  * Get Default Configuration
@@ -21,7 +20,12 @@ export function getDefaultAxiosConfiguration(): AxiosRequestConfig {
     // `paramsSerializer` is an optional function in charge of serializing `params`
     // (e.g. https://www.npmjs.com/package/qs, http://api.jquery.com/jquery.param/)
     paramsSerializer: function (params) {
-      return Qs.stringify(params, { arrayFormat: 'brackets' });
+      return Object.keys(params)
+        .map(
+          (key) =>
+            `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`
+        )
+        .join('&');
     },
   };
 }
