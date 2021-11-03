@@ -9,9 +9,7 @@ export class MixRepository<T> {
   public viewName: string;
   public specificulture?: string | null;
   public get modelUrl(): string {
-    return this.specificulture
-      ? `/rest/${this.specificulture}/${this.modelType}/${this.viewName}`
-      : `/rest/${this.modelType}/${this.viewName}`;
+    return `${this.modelType}`;
   }
   private service: MixApiService;
   constructor(

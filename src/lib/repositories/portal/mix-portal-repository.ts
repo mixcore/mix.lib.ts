@@ -15,6 +15,12 @@ export class MixPortalRepository<T> extends MixRepository<T> {
     const conf = getDefaultAxiosConfiguration();
     conf.baseURL = appUrl;
     conf.withCredentials = false;
-    super(appUrl, modelName, viewName, specificulture, conf);
+    super(
+      `${appUrl}/rest/mix-portal`,
+      modelName,
+      viewName,
+      specificulture,
+      conf
+    );
   }
 }

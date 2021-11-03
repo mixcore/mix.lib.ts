@@ -32,11 +32,10 @@ export class AESKey {
    *
    */
   constructor(encryptedKeys: string) {
-    const keyStrings = CryptoJS.enc.Utf8.stringify(
-      CryptoJS.enc.Hex.parse(encryptedKeys)
-    ).split(',');
-    this.iv = CryptoJS.enc.Hex.parse(keyStrings[0]);
-    this.key = CryptoJS.enc.Hex.parse(keyStrings[1]).toString();
+    const base64 = atob(encryptedKeys);
+    const keyStrings = base64.split(',');
+    this.iv = keyStrings[0];
+    this.key = keyStrings[1];
   }
 }
 

@@ -55,7 +55,7 @@ export class MixSettingService {
           );
           localStorage.setItem(
             LocalStorageKeys.CONF_LAST_SYNC_CONFIGURATION,
-            this.globalSettings.lastUpdateConfiguration.toString() || ''
+            this.globalSettings.lastUpdateConfiguration?.toString() || ''
           );
         }
       });

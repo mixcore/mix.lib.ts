@@ -7,8 +7,8 @@ export enum DisplayDirection {
   Desc = 'Desc',
 }
 export enum MixModelType {
-  Page = 'page',
-  Post = 'post',
+  Page = 'mix-page-content',
+  Post = 'mix-post-content',
   Module = 'module',
   Database = 'mix-database',
   DatabaseData = 'mix-database-data',
