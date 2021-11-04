@@ -74,4 +74,8 @@ export class MixRepository<T> {
   public setLanguage(specificulture: string) {
     this.specificulture = specificulture;
   }
+
+  public setBaseURL(baseURL: string) {
+    this.service.instance.defaults.baseURL = baseURL;
+  }
 }
