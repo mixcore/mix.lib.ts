@@ -13,7 +13,6 @@
     "build:main": "tsc -p tsconfig.json",
     "build:module": "tsc -p tsconfig.module.json",
     "build:lib": "tsc -p tsconfig.lib.json",
-    "build:lib-dist": "tsc -p tsconfig.lib.dist.json",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
     "fix:lint": "eslint src --ext .ts --fix",
@@ -45,7 +44,9 @@
   },
   "dependencies": {
     "axios": "^0.21.4",
-    "crypto-ts": "^1.0.2"
+    "class-transformer": "^0.4.0",
+    "crypto-ts": "^1.0.2",
+    "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
     "@ava/typescript": "^1.1.1",

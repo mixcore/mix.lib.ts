@@ -27,5 +27,5 @@ export abstract class ViewModelBase<T> {
   }
 
   abstract parseModel(): T;
-  abstract parseView(model: T): void;
+  abstract parseView(model: T): ViewModelBase<T>;
 }

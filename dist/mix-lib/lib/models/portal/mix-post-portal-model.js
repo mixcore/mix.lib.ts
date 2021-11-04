@@ -1,4 +1,0 @@
-import { AuditModel } from '../../infrastructure/models/audit-model';
-export class MixPostPortalModel extends AuditModel {
-}
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWl4LXBvc3QtcG9ydGFsLW1vZGVsLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vc3JjL2xpYi9tb2RlbHMvcG9ydGFsL21peC1wb3N0LXBvcnRhbC1tb2RlbC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQSxPQUFPLEVBQUUsVUFBVSxFQUFFLE1BQU0seUNBQXlDLENBQUM7QUFHckUsTUFBTSxPQUFPLGtCQUFtQixTQUFRLFVBQWtCO0NBc0J6RCJ9

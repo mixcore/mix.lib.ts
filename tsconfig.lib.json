@@ -2,7 +2,7 @@
   "extends": "./tsconfig",
   "compilerOptions": {
     "target": "esnext",
-    "outDir": "../mix.portal.angular-io/libs/mix-lib",
+    "outDir": "./dist/mix-lib",
     "module": "esnext"
   },
   "exclude": ["node_modules/**"]
