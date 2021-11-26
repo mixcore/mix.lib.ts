@@ -1,6 +1,6 @@
 import { MixContentStatus } from '../../enums/mix-enums';
-import { AuditModel } from '../../infrastructure/models/audit-model';
-import { SupportedCulture } from '../shared/supported-culture';
+import { AuditModel } from '../base/audit-model';
+import { SupportedCulture } from './cultute.model';
 
 export class MixPostPortalModel extends AuditModel<number> {
   public cultures?: SupportedCulture;
