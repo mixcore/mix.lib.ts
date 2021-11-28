@@ -1,4 +1,4 @@
-import { MixContentStatus } from '../../enums/mix-enums';
+import { MixContentStatus } from '../../enums';
 import { AuditModel } from '../base/audit-model';
 import { SupportedCulture } from './cultute.model';
 

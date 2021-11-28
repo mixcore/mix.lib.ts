@@ -1,5 +1,5 @@
 import { LocalStorageKeys } from '../../constants/local-storage-keys';
-import { MixModelType, MixViewModelTypes } from '../../enums/mix-enums';
+import { MixModelType, MixViewModelTypes } from '../../enums';
 // import { getDefaultAxiosConfiguration } from '../../helpers/mix-helper';
 // import { MixRepository } from '../../infrastructure/base/mix-repository';
 

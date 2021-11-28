@@ -1,3 +1,5 @@
+export * from './init-status.enum';
+
 export enum MixViewModelTypes {
   Portal = 'portal',
   Mvc = 'mvc',

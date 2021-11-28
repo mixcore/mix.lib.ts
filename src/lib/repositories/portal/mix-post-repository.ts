@@ -1,4 +1,4 @@
-import { MixModelType } from '../../enums/mix-enums';
+import { MixModelType } from '../../enums';
 import { MixPostPortalModel } from '../../models/src/mix-post.model';
 
 // import { MixPortalRepository } from './mix-portal-repository';
