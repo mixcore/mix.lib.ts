@@ -1,5 +1,9 @@
 import { MixBaseService } from "../base/base.service";
 
 export class MixSharedService extends MixBaseService {
-    public readonly getCultureApi: string = `${this.baseUrl}/`
+    private culturesRoute: string = '/shared/json-data/Cultures'
+
+    public get getCulturesApi(): string {
+        return `${this.baseUrl}${this.culturesRoute}`;
+    }
 }

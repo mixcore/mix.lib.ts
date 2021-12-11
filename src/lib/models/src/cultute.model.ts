@@ -1,4 +1,4 @@
-export class SupportedCulture {
+export class Culture {
   public id?: number;
   public specificulture!: string;
   public lcid!: string;

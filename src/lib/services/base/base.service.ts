@@ -4,4 +4,8 @@ export class MixBaseService {
     public setBaseUrl(url: string): void {
         this.baseUrl = url;
     }
+
+    constructor(baseUrl: string) {
+        this.baseUrl = baseUrl;
+    }
 }
