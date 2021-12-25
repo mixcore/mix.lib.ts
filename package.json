@@ -45,12 +45,12 @@
   "dependencies": {
     "axios": "^0.21.4",
     "class-transformer": "^0.4.0",
-    "crypto-ts": "^1.0.2",
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
     "@ava/typescript": "^1.1.1",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@types/crypto-js": "^4.0.2",
     "@types/qs": "^6.9.6",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
