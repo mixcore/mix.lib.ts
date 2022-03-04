@@ -1,9 +1,11 @@
-import { MixBaseService } from "../base/base.service";
+import { MixBaseService } from '../base/base.service';
 
 export class MixInitService extends MixBaseService {
-    private initStatusRoute: string = '/mix-tenancy/setup/get-init-status'
+  public get getInitStatusEndpoint(): string {
+    return `${this.baseUrl}/mix-tenancy/setup/get-init-status`;
+  }
 
-    public get getInitStatusApi(): string {
-        return `${this.baseUrl}${this.initStatusRoute}`;
-    }
+  public get initFullTenantEndpoint(): string {
+    return `${this.baseUrl}/mix-tenancy/setup/init-full-tenant`;
+  }
 }

@@ -36,7 +36,7 @@ export class AESKey {
       CryptoJS.enc.Base64.parse(encryptedKeys)
     ).split(',');
     this.iv = CryptoJS.enc.Base64.parse(keyStrings[0]);
-    this.key = CryptoJS.enc.Base64.parse(keyStrings[1]).toString();
+    this.key = CryptoJS.enc.Base64.parse(keyStrings[1]) as unknown as string;
   }
 }
 
