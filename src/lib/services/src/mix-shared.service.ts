@@ -1,7 +1,7 @@
 import { MixBaseService } from "../base/base.service";
 
 export class MixSharedService extends MixBaseService {
-    private culturesRoute: string = '/shared/json-data/Cultures'
+    private culturesRoute = '/shared/json-data/Cultures'
 
     public get getCulturesApi(): string {
         return `${this.baseUrl}${this.culturesRoute}`;
@@ -9,7 +9,7 @@ export class MixSharedService extends MixBaseService {
     public get getGlobalSettings(): string {
         return `${this.baseUrl}/shared/get-global-settings`;
     }
-    public get signIn(): string {
+    public get signInEndpoint(): string {
         return `${this.baseUrl}/mix-account/login`;
     }
 }
