@@ -1,0 +1,1 @@
+export type { IGetSharedSettingsResult } from './get-shared-setting-result.dto';
