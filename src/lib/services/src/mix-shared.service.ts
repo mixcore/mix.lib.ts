@@ -16,4 +16,8 @@ export class MixSharedService extends MixBaseService {
     public get getSharedSettingEndpoint(): string {
         return `${this.baseUrl}/shared/get-shared-settings/en-US`;
     }
+
+    public get getSharedDashboardInfoEndpoint(): string {
+        return `${this.baseUrl}/mix-portal/common/en-US/dashboard`;
+    }
 }
