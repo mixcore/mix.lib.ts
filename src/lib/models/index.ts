@@ -11,3 +11,4 @@ export * from './src/init-tenant.model';
 export * from './src/account.model';
 export * from './src/theme.model';
 export * from './src/dashboard-info.model';
+export * from './src/mix-content-default.model';
