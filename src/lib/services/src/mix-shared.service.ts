@@ -13,6 +13,10 @@ export class MixSharedService extends MixBaseService {
         return `${this.baseUrl}/mix-account/login`;
     }
 
+    public get getAccountProfileEndpoint(): string {
+        return `${this.baseUrl}/mix-account/my-profile`;
+    }
+
     public get getSharedSettingEndpoint(): string {
         return `${this.baseUrl}/shared/get-shared-settings/en-US`;
     }

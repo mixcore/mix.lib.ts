@@ -1,3 +1,4 @@
+import { InitStep } from '../../enums';
 import { MixBaseService } from '../base/base.service';
 
 export class MixInitService extends MixBaseService {
@@ -7,5 +8,9 @@ export class MixInitService extends MixBaseService {
 
   public get initFullTenantEndpoint(): string {
     return `${this.baseUrl}/mix-tenancy/setup/init-full-tenant`;
+  }
+
+  public hasInit(data: InitStep): boolean {
+    return data !== InitStep.Blank;
   }
 }
